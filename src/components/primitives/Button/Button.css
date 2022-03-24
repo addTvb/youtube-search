@@ -1,0 +1,28 @@
+.button {
+	border: 0;
+	padding: 0.6rem 1.9rem;
+	font-size: 1.1rem;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+.button_submit {
+	color: #fff;
+	background-color: var(--siberian-blue);
+	border-radius: 5px;
+}
+.button_submit:active,
+.button_cancel:active {
+	transform: scale(0.95);
+}
+
+.button_cancel {
+	border-radius: 5px;
+	background-color: #fff;
+	color: var(--siberian-blue);
+	border: 1px solid var(--siberian-blue);
+}
+
+.button_link {
+	color: var(--siberian-blue);
+	background-color: transparent;
+}
