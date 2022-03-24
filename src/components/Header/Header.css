@@ -2,14 +2,15 @@
 	width: 100%;
 	height: 80px;
 	display: flex;
-	justify-content: space-around;
 	align-items: center;
+	justify-content: space-around;
 	border-bottom: 1px solid #f1f1f1;
-
+	margin: 20 auto;
 	background-color: #fff;
 }
 .header__logo {
 	width: 48px;
+	margin-right: 55px;
 }
 .header__nav {
 	height: 100%;
@@ -29,4 +30,16 @@
 .header__link_current {
 	border-bottom: 2px solid var(--siberian-blue);
 	color: var(--siberian-blue);
+}
+.header__logout {
+	display: flex;
+	justify-self: end;
+}
+@media only screen and (max-width: 560px) {
+	.header__logo {
+		margin-right: 10px;
+	}
+	.header__nav {
+		column-gap: 10px;
+	}
 }
