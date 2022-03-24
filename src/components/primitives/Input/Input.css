@@ -1,0 +1,23 @@
+.input {
+	width: 330px;
+	min-width: 284px;
+	color: var(--light-gray);
+	font-size: 1rem;
+}
+.input__field {
+	width: 100%;
+	padding: 0.7rem 0.9rem;
+	border: 1px solid var(--light-gray);
+	border-radius: 10px;
+	margin-top: 5px;
+	font-size: 1.1rem;
+}
+.input__field:focus {
+	background-color: var(--light-blue);
+	border: 1px solid var(--siberian-blue);
+}
+.input__error-text {
+	margin-top: 5px;
+	margin-left: 5px;
+	color: tomato;
+}

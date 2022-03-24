@@ -19,19 +19,19 @@ export const Login = () => {
 		},
 		resolver: yupResolver(schema),
 	});
-	const onSubmit = (data: ILoginForm) => console.log(data);
+	const onSubmit = (data: ILoginForm) => {
+		console.log(data);
+		console.log(data);
+		console.log(data);
+	};
 
 	return (
-		<div>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<div className='login__header'>
-					<img
-						className='login__logo'
-						src={Logo}
-						alt='Логотип компании Sibdev'
-					/>
-					<div className='login__title'></div>
-				</div>
+		<form onSubmit={handleSubmit(onSubmit)} className='login'>
+			<div className='login__header'>
+				<img className='login__logo' src={Logo} alt='Логотип компании Sibdev' />
+				<h3 className='login__title'>Вход</h3>
+			</div>
+			<div className='login__body'>
 				<Input
 					control={control}
 					type='text'
@@ -46,9 +46,9 @@ export const Login = () => {
 					label='Пароль'
 					errorText={errors.password?.message}
 				/>
-				<Button type='submit'>Войти</Button>
-			</form>
-		</div>
+			</div>
+			<Button type='submit'>Войти</Button>
+		</form>
 	);
 };
 

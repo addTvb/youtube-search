@@ -9,10 +9,10 @@ export const Input = ({ label, errorText, name, control, ...props }: any) => {
 			name={name}
 			control={control}
 			render={({ field }) => (
-				<label>
+				<label className='input'>
 					{label}
-					<input {...props} {...field} />
-					<p>{errorText}</p>
+					<input {...props} {...field} className='input__field' />
+					<p className='input__error-text'>{errorText}</p>
 				</label>
 			)}
 		/>

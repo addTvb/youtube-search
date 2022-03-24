@@ -1,0 +1,30 @@
+.login {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: 20px;
+	background-color: #fff;
+	border: 1px solid rgba(39, 39, 39, 0.1);
+	border-radius: 10px;
+	width: 510px;
+	height: 520px;
+}
+.login__header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: 32px;
+}
+.login__title {
+	font-size: 1.1rem;
+}
+.login__body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: 20px;
+	margin-bottom: 20px;
+}
