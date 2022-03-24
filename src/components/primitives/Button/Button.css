@@ -23,6 +23,32 @@
 }
 
 .button_link {
+	padding: 5px 0;
+	margin: 0;
+	position: relative;
 	color: var(--siberian-blue);
 	background-color: transparent;
+}
+.button_link::before {
+	content: '';
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	width: 0%;
+	height: 2px;
+	background-color: var(--siberian-blue);
+	transition: 0.2s;
+}
+.button_link:hover:before {
+	width: 100%;
+}
+
+.button_icon {
+	padding: 5px;
+	margin: 5px;
+	border: 0;
+	background-color: transparent;
+}
+.button_icon:focus-visible {
+	outline: auto;
 }

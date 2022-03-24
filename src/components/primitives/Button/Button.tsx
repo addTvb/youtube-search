@@ -8,7 +8,7 @@ export const Button = (props: IButton) => {
 	const { type, children } = props;
 
 	return (
-		<button className={getButtonClass(type)} type={getButtonType(type)}>
+		<button {...props} className={getButtonClass(type)} type={getButtonType(type)}>
 			{children}
 		</button>
 	);

@@ -1,13 +1,18 @@
+import { useNavigate } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
+import { getLoginData } from 'api/getLoginData';
 import { Input, Button } from 'components/primitives';
 
 import Logo from 'images/sibdev-logo.svg';
 import './Login.css';
 
 export const Login = () => {
+	const navigate = useNavigate();
+
 	const {
 		handleSubmit,
 		control,
@@ -19,14 +24,35 @@ export const Login = () => {
 		},
 		resolver: yupResolver(schema),
 	});
+	const notifyError = () => toast.error('Неправильный логин или пароль!');
+
 	const onSubmit = (data: ILoginForm) => {
-		console.log(data);
-		console.log(data);
-		console.log(data);
+		const { login, password }: ILoginForm = data;
+
+		getLoginData().then((res: ILoginForm[]) => {
+			let isLoginValid: boolean[] = [];
+
+			res.forEach((item: ILoginForm) => {
+				if (item.login === login && item.password === password) {
+					isLoginValid.push(true);
+				} else {
+					isLoginValid.push(false);
+				}
+			});
+
+			const even = (element: boolean) => element === true;
+
+			if (isLoginValid.some(even)) {
+				navigate('/search');
+			} else {
+				notifyError();
+			}
+		});
 	};
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} className='login'>
+			<Toaster position='top-center' />
 			<div className='login__header'>
 				<img className='login__logo' src={Logo} alt='Логотип компании Sibdev' />
 				<h3 className='login__title'>Вход</h3>
