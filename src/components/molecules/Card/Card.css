@@ -1,3 +1,6 @@
+abbr {
+	text-decoration: none;
+}
 .card {
 	width: 245px;
 	max-height: 226px;
@@ -7,9 +10,6 @@
 	align-items: flex-start;
 	row-gap: 8px;
 	text-align: left;
-}
-abbr {
-	text-decoration: none;
 }
 .card__cover {
 	width: 100%;

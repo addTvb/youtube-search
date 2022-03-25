@@ -3,8 +3,6 @@ import './Card.css';
 
 // TODO add types
 export const Card = ({ video, ...props }: any) => {
-	console.log(video);
-
 	// TODO add type
 	const setVideoCover = (covers: any) => {
 		return covers ? covers.medium.url : Placeholder;
@@ -14,7 +12,7 @@ export const Card = ({ video, ...props }: any) => {
 	};
 	return (
 		<a href={getVideoUrl(video.id.videoId)} target='_blank' rel='noopener noreferrer'>
-			<br title={video.snippet.description}>
+			<abbr title={video.snippet.description}>
 				<div className='card'>
 					<img
 						src={setVideoCover(video.snippet.thumbnails)}
@@ -29,7 +27,7 @@ export const Card = ({ video, ...props }: any) => {
 						<p className='card__views'>654 views</p>
 					</div>
 				</div>
-			</br>
+			</abbr>
 		</a>
 	);
 };
