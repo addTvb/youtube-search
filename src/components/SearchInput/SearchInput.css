@@ -13,6 +13,13 @@
 	border-radius: 10px 0 0 10px;
 	font-size: 1.1rem;
 }
+.search__favorites-icon {
+	display: inline-block;
+	position: relative;
+	left: 73%;
+	/* left: calc(100% - 175px); */
+	top: 4px;
+}
 .search__button {
 	width: 20%;
 	height: 50px;
@@ -26,11 +33,6 @@
 }
 .search__button:active {
 	transform: scale(0.97);
-}
-.search__error-text {
-	margin-top: 5px;
-	margin-left: 5px;
-	color: tomato;
 }
 
 @media only screen and (max-width: 760px) {

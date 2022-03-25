@@ -13,7 +13,7 @@
 	font-size: 1.1rem;
 }
 .input__field:focus {
-	background-color: var(--light-blue);
+	background-color: var(--light-blue-opacity);
 	border: 1px solid var(--siberian-blue);
 }
 .input__error-text {

@@ -1,6 +1,7 @@
 :root {
 	--siberian-blue: #1390e5;
-	--light-blue: rgba(197, 228, 249, 0.3);
+	--light-blue: #c5e4f9;
+	--light-blue-opacity: rgba(197, 228, 249, 0.3);
 	--light-gray: rgba(23, 23, 25, 0.3);
 }
 
