@@ -51,30 +51,36 @@ export const Login = () => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)} className='login'>
-			<Toaster position='top-center' />
-			<div className='login__header'>
-				<img className='login__logo' src={Logo} alt='Логотип компании Sibdev' />
-				<h3 className='login__title'>Вход</h3>
-			</div>
-			<div className='login__body'>
-				<Input
-					control={control}
-					type='text'
-					name='login'
-					label='Логин'
-					errorText={errors.login?.message}
-				/>
-				<Input
-					control={control}
-					type='password'
-					name='password'
-					label='Пароль'
-					errorText={errors.password?.message}
-				/>
-			</div>
-			<Button type='submit'>Войти</Button>
-		</form>
+		<div className='login-wrapper'>
+			<form onSubmit={handleSubmit(onSubmit)} className='login'>
+				<Toaster position='top-center' />
+				<div className='login__header'>
+					<img
+						className='login__logo'
+						src={Logo}
+						alt='Логотип компании Sibdev'
+					/>
+					<h3 className='login__title'>Вход</h3>
+				</div>
+				<div className='login__body'>
+					<Input
+						control={control}
+						type='text'
+						name='login'
+						label='Логин'
+						errorText={errors.login?.message}
+					/>
+					<Input
+						control={control}
+						type='password'
+						name='password'
+						label='Пароль'
+						errorText={errors.password?.message}
+					/>
+				</div>
+				<Button type='submit'>Войти</Button>
+			</form>
+		</div>
 	);
 };
 

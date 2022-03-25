@@ -1,0 +1,8 @@
+.search-page {
+	height: 100%;
+}
+.search-page-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

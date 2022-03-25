@@ -64,5 +64,5 @@ interface ISearchForm {
 }
 
 const schema = yup.object({
-	query: yup.string().required('Введите название видео'),
+	query: yup.string(),
 });

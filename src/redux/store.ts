@@ -21,7 +21,7 @@ export const videosSlice = createSlice({
 	reducers: {
 		// TODO add types
 		addVideos: (state, action: PayloadAction<any>) => {
-			state.videos = [action.payload];
+			state.videos = action.payload;
 		},
 		// removeTodo: (state, action: PayloadAction<number>) => {
 		// 	state.todos = state.todos.filter(({ id }) => id !== action.payload);
