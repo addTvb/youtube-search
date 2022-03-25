@@ -1,8 +1,3 @@
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-
-import { Input, Button } from 'components/primitives';
 import { SearchInput } from 'components';
 
 import './SearchForm.css';
