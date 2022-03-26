@@ -1,0 +1,13 @@
+.info-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+.info-row__query {
+	font-size: 1rem;
+}
+.info-row__query > span {
+	font-weight: bold;
+}

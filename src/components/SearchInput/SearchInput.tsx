@@ -69,11 +69,15 @@ export const SearchInput = () => {
 		<form onSubmit={handleSubmit(onSubmit)} className='search'>
 			<Toaster position='top-center' />
 			<div className='search__wrapper'>
-				<span className='search__favorites-icon'>
-					<Button type='icon' onClick={addToFavorites}>
-						<HeartIcon fill={fillColor} />
-					</Button>
-				</span>
+				{videos.length !== 0 ? (
+					<span className='search__favorites-icon'>
+						<Button type='icon' onClick={addToFavorites}>
+							<HeartIcon fill={fillColor} />
+						</Button>
+					</span>
+				) : (
+					<></>
+				)}
 				<input
 					{...register('query')}
 					className='search__input'
