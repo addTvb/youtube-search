@@ -20,6 +20,8 @@ export const videosSlice = createSlice({
 	reducers: {
 		// TODO add types
 		addVideos: (state, action: PayloadAction<any>) => {
+			console.log('THIW IS ACTION VIDEO');
+
 			state.videos = action.payload;
 		},
 	},

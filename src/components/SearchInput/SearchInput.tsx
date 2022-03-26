@@ -7,15 +7,23 @@ import * as yup from 'yup';
 
 import { Button } from 'components/primitives';
 import { useLocalStorage } from 'hooks';
-import { addVideos, selectVideos, selectFavorites, addFavorites } from 'redux/store';
+import {
+	addVideos,
+	selectVideos,
+	changeQuery,
+	addFavorites,
+	selectQuery,
+} from 'redux/store';
 
 import searchVideo from 'api/searchVideo';
 import { HeartIcon } from 'icons';
 import { HeartIconFill } from 'types/icon';
 
 import './SearchInput.css';
+import { InputEvent } from 'types/events';
 
 export const SearchInput = () => {
+	const queryRed = useSelector(selectQuery);
 	const videos = useSelector(selectVideos);
 	const dispatch = useDispatch();
 
@@ -28,6 +36,7 @@ export const SearchInput = () => {
 		},
 		resolver: yupResolver(schema),
 	});
+	const queryRegister = register('query', { required: true });
 
 	useEffect(() => {
 		const query = getValues('query');
@@ -51,6 +60,12 @@ export const SearchInput = () => {
 		}
 	};
 
+	const condition = videos.length !== 0 ? 'search__wrapper_full-width' : '';
+
+	const handleChangeQuery = (e: InputEvent) => {
+		queryRegister.onChange(e);
+		dispatch(changeQuery(e.target.value));
+	};
 	const onSubmit = ({ query }: ISearchForm) => {
 		searchVideo
 			.get('/search', {
@@ -68,7 +83,17 @@ export const SearchInput = () => {
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} className='search'>
 			<Toaster position='top-center' />
-			<div className='search__wrapper'>
+			<div className={`search__wrapper ${condition}`}>
+				<input
+					{...queryRegister}
+					onChange={handleChangeQuery}
+					className='search__input'
+					type='text'
+					placeholder='Что хотите посмотреть?'
+				/>
+				<button className='search__button' type='submit'>
+					Найти
+				</button>
 				{videos.length !== 0 ? (
 					<span className='search__favorites-icon'>
 						<Button type='icon' onClick={addToFavorites}>
@@ -78,15 +103,6 @@ export const SearchInput = () => {
 				) : (
 					<></>
 				)}
-				<input
-					{...register('query')}
-					className='search__input'
-					type='text'
-					placeholder='Что хотите посмотреть?'
-				/>
-				<button className='search__button' type='submit'>
-					Найти
-				</button>
 			</div>
 		</form>
 	);

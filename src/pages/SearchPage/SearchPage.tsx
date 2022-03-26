@@ -8,11 +8,8 @@ import './SearchPage.css';
 export const SearchPage = () => {
 	const videos = useSelector(selectVideos);
 
-	const centerLayout = () => {
-		if (videos.length !== 0) return 'search-page';
-		return 'search-page-center';
-	};
-	console.log(centerLayout());
+	const centerLayout = () =>
+		videos.length !== 0 ? 'search-page' : 'search-page-center';
 
 	return (
 		<div className={centerLayout()}>

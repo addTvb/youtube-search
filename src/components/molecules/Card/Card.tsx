@@ -1,3 +1,5 @@
+import { getYouTubeLink } from 'utils';
+
 import Placeholder from './placeholder.jpg';
 import './Card.css';
 
@@ -7,11 +9,9 @@ export const Card = ({ video, ...props }: any) => {
 	const setVideoCover = (covers: any) => {
 		return covers ? covers.medium.url : Placeholder;
 	};
-	const getVideoUrl = (videoId: string) => {
-		return `https://www.youtube.com/watch?v=${videoId}`;
-	};
+
 	return (
-		<a href={getVideoUrl(video.id.videoId)} target='_blank' rel='noopener noreferrer'>
+		<a href={getYouTubeLink(video.id)} target='_blank' rel='noopener noreferrer'>
 			<abbr title={video.snippet.description}>
 				<div className='card'>
 					<img

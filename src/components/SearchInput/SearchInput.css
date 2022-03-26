@@ -1,9 +1,13 @@
 .search {
+	width: 100%;
 }
 .search__wrapper {
 	display: flex;
 	width: 680px;
 	min-width: 300px;
+}
+.search__wrapper_full-width {
+	width: 100%;
 }
 .search__input {
 	width: 80%;
@@ -16,7 +20,7 @@
 .search__favorites-icon {
 	display: inline-block;
 	position: relative;
-	left: 73%;
+	right: 25%;
 	/* left: calc(100% - 175px); */
 	top: 4px;
 }
