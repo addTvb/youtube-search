@@ -1,19 +1,19 @@
 import { useSelector } from 'react-redux';
 
-import { Card } from 'components/molecules/Card';
+import { ListItem } from 'components/molecules/ListItem';
 import { selectVideos } from 'redux/store';
 
-import './CardLayout.css';
+import './ListLayout.css';
 
-export const CardLayout = () => {
+export const ListLayout = () => {
 	const videos = useSelector(selectVideos);
 
 	// TODO add type to video
 	return (
-		<div className='card-layout'>
+		<div className='list-layout'>
 			{videos.length !== 0 &&
 				videos.map((video: any, index: number) => (
-					<Card video={video} key={index} />
+					<ListItem video={video} key={index} />
 				))}
 		</div>
 	);

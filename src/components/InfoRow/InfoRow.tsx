@@ -9,6 +9,7 @@ import { changeLayout, selectLayout, selectQuery, selectVideos } from 'redux/sto
 import './InfoRow.css';
 
 export const InfoRow = () => {
+	const lay = useSelector(selectLayout);
 	const videos = useSelector(selectVideos);
 	const query = useSelector(selectQuery);
 	const dispatch = useDispatch();
@@ -18,13 +19,18 @@ export const InfoRow = () => {
 	const [listIconColor, setListIconColor] = useState<LayoutIconFill>('#BBBBBB');
 
 	const handleChangeLayout = (layoutType: 'card' | 'list') => {
+		console.log(lay);
+
 		if (layoutType === 'card') {
 			dispatch(changeLayout(layoutType));
+			console.log(lay);
+
 			setGridIconColor('#272727');
 			setListIconColor('#BBBBBB');
 		}
 		if (layoutType === 'list') {
 			dispatch(changeLayout(layoutType));
+			console.log(lay);
 			setGridIconColor('#BBBBBB');
 			setListIconColor('#272727');
 		}

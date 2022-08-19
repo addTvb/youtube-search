@@ -1,0 +1,26 @@
+.list-item {
+	width: 100%;
+	display: flex;
+	column-gap: 20px;
+}
+.list-item__cover {
+	width: 157px;
+	height: 80px;
+}
+.list-item__right-side {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.list-item__title {
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: #000;
+	margin-bottom: 8px;
+}
+.list-item__channel {
+	font-size: 1rem;
+}
+.list-item__views {
+	font-size: 1rem;
+}

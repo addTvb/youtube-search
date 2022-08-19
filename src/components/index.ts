@@ -5,5 +5,6 @@ export { SearchResult } from './SearchResult';
 
 export { InfoRow } from './InfoRow';
 export { CardLayout } from './CardLayout';
+export { ListLayout } from './ListLayout';
 
 export { PrivateRoute } from './PrivateRoute';

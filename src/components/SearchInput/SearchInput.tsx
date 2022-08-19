@@ -40,11 +40,12 @@ export const SearchInput = () => {
 
 	useEffect(() => {
 		const query = getValues('query');
+// временно закоментировал для того чтобы работало
+		// favorites.forEach((item: { text: string }) => {
+		// 	if (query === item.text && fillColor === 'none') setFillColor('#c5e4f9');
+		// 	else setFillColor('none');
+		// });
 
-		favorites.forEach((item: { text: string }) => {
-			if (query === item.text && fillColor === 'none') setFillColor('#c5e4f9');
-			else setFillColor('none');
-		});
 	}, [watch('query')]);
 
 	const notifyError = () => toast.error('Ничего не удалось найти🤷‍♂️');
@@ -67,17 +68,17 @@ export const SearchInput = () => {
 		dispatch(changeQuery(e.target.value));
 	};
 	const onSubmit = ({ query }: ISearchForm) => {
-		searchVideo
-			.get('/search', {
+
+		searchVideo.get('/search', {
 				params: {
 					q: query,
 				},
-			})
-			.then((res) => {
+			}).then((res) => {
 				if (res.data.items && res.data.items.length !== 0)
 					dispatch(addVideos(res.data.items));
 				else notifyError();
 			});
+
 	};
 
 	return (
@@ -94,7 +95,7 @@ export const SearchInput = () => {
 				<button className='search__button' type='submit'>
 					Найти
 				</button>
-				{videos.length !== 0 ? (
+				{/* {videos.length !== 0 ? (
 					<span className='search__favorites-icon'>
 						<Button type='icon' onClick={addToFavorites}>
 							<HeartIcon fill={fillColor} />
@@ -102,7 +103,7 @@ export const SearchInput = () => {
 					</span>
 				) : (
 					<></>
-				)}
+				)} */}
 			</div>
 		</form>
 	);
