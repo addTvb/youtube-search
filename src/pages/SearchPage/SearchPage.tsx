@@ -1,20 +1,19 @@
-import { useSelector } from 'react-redux';
-
-import { SearchForm, SearchResult } from 'components';
-import { selectVideos } from 'redux/store';
+import { SearchResult } from 'entities/video/ui/SearchResult/SearchResult';
+import { SearchForm } from 'entities/video/ui/SearchForm/SearchForm';
 
 import './SearchPage.css';
+import { useVideos } from 'entities/video/model/useVideos';
 
 export const SearchPage = () => {
-	const videos = useSelector(selectVideos);
+	const { videos } = useVideos();
 
 	const centerLayout = () =>
-		videos.length !== 0 ? 'search-page' : 'search-page-center';
+		videos?.items.length !== 0 ? 'search-page' : 'search-page-center';
 
 	return (
 		<div className={centerLayout()}>
 			<SearchForm />
-			{videos.length !== 0 ? <SearchResult /> : <></>}
+			{videos?.items.length !== 0 ? <SearchResult /> : <></>}
 		</div>
 	);
 };

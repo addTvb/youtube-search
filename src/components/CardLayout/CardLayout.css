@@ -1,8 +1,0 @@
-.card-layout {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	justify-content: center;
-	align-items: center;
-	row-gap: 28px;
-	column-gap: 20px;
-}

@@ -1,5 +1,3 @@
-export { Favorites } from './Favorites';
-export { Login } from './Login';
-export { NotFound } from './NotFound';
-export { SearchPage } from './SearchPage';
-export { Layout } from './Layout';
+export { SearchPage } from './SearchPage/SearchPage';
+export { NotFound } from './NotFound/NotFound';
+export { Login } from './Login/Login';

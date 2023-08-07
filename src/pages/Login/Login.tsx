@@ -4,10 +4,10 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
-import { getLoginData } from 'api/getLoginData';
-import { Input, Button } from 'components/primitives';
+import { getLoginData } from 'shared/api/getLoginData';
+import { Button } from 'shared/ui/Button/Button';
+import { Input } from 'shared/ui/Input/Input';
 
-import Logo from 'images/sibdev-logo.svg';
 import './Login.css';
 
 export const Login = () => {
@@ -57,7 +57,7 @@ export const Login = () => {
 				<div className='login__header'>
 					<img
 						className='login__logo'
-						src={Logo}
+						src='/sibdev-logo.svg'
 						alt='Логотип компании Sibdev'
 					/>
 					<h3 className='login__title'>Вход</h3>
